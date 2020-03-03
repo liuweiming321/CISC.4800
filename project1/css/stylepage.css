@@ -1,0 +1,133 @@
+/* css style page for index and about us page */
+/*CISC3650*/
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+html{
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment:fixed;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: Comic Sans MS, Arial, sans-serif;
+	color: #77ff00;
+}
+
+label {
+    display: block;
+    margin: 1px;
+    padding: 1px;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+
+tr{	
+	background-color: grey;
+	color: white;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+    color:black;
+}
+
+ul{
+    list-style: circle;
+}
+
+li:nth-child(even){
+    list-style: square;
+}
+
+.blog_writting{
+    float: left;
+    width: 50%;
+    color: #42daf5;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.invalid{
+    background:red;
+}
+
+.valid{
+    background:green;
+}
+
+.music_box{
+	color: red;
+	position:fixed;
+	bottom: 0px;
+	right: 0px;
+}
+
+a.to_link{
+	position:static;
+	top:5px;
+	left:0px;
+	border: 2px solid #ffffff;
+}
+
+hr.home_page{
+    display: block;
+    position: static;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255,122,180,0), rgba(255,122,180,0.9), rgba(255,122,180,0));
+    
+}
+
+hr.child_page {
+    display: block;
+    position: static;
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(255,122,180,0.4), rgba(255,122,180,0.1), rgba(255,122,180,0));
+}
+
+#title_page{
+    padding-top: 200px;
+    margin-left:20%;
+    margin-right:20%;
+}
+
+a:hover{
+	font-size:105%;
+}
+
+@media only screen and (min-width:1750px){
+/*my screen size when creating this project*/	
+	.blog_writting, .blog_picture{
+		width:50%;
+	}
+}
+
+@media only screen and (max-width:800px){
+/*Tablets*/	
+
+}
+
+@media only screen and (max-width:600px){
+/*I-Phone6 size*/
+
+}
+
+

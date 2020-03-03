@@ -1,0 +1,131 @@
+<!--Wei Ming Liu -->
+<!--resume form page-->
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Resume Page</title>
+		<link rel="stylesheet" type="text/css" href="../css/resume_stylepage.css">
+		<script src = "../javascript/script.js"></script>
+	</head>
+	<body>
+	<div class="setting_change">
+		<p>Hate this color? change here</p>
+		<button type = "button" style="float:right;" onclick = "bg_color_change();">
+			background
+		</button>
+		<br>
+		<br>
+		<button type = "button" style="float:right;" onclick="txt_color_change();">
+			text
+		</button>
+	</div>
+	<h1>Resume Form</h1>
+	<hr>
+	<p>* :required field</p>
+	<br>
+	<form action="" name="register" onsubmit="printForm();" method="post">
+		<label for="f_name">First Name*:</label>
+		<input type="text" id="f_name" name="First Name" class="" onkeyup="autoUpper('f_name');
+			nameCheck('f_name', 'err_f');" required/><span id="err_f"></span>
+		<br>
+		<label for="l_name">Last Name*:</label>
+		<input type="text" id="l_name" name="Last Name" class="" onkeyup="autoUpper('l_name');
+			nameCheck('l_name', 'err_l');" required/><span id="err_l"></span>
+		<br>
+		<label for="gender">Gender:</label>
+		<div id="gender">
+			<input type="radio" value="male"> Male
+			<input type="radio" value="female"> Female
+			<input type="radio" value="other"> Other
+		</div>
+		<br>
+		<div>
+			<label for="ssn_first">Social security#:</label>
+			<input type="password" id="ssn_first" size="3" maxlength="3"
+				   onkeyup="autoTab('ssn_first', '3', 'ssn_next')"/>-
+			<input type="password" id="ssn_next" size="2" maxlength="2"
+				   onkeyup="autoTab('ssn_next', '2', 'ssn_last')"/>-
+			<input type="password" id="ssn_last" size="4" maxlength="4"/>
+		</div>
+		<br>
+		<label for="address">Address*:</label>
+		<input type="text" id="address" name="Address" required/>
+		<br>
+		<label for="city">City*:</label>
+		<input type="text" id="city" name="City" required/>
+		<br>
+		<label for="state">State*:</label>
+		<select id="state" name="State" required>
+			<option value="al">AL</option> <option value="ak">AK</option> <option value="ar">AR</option>
+			<option value="az">AZ</option> <option value="ca">CA</option> <option value="co">CO</option>
+			<option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option>
+			<option value="ga">GA</option> <option value="hi">HI</option> <option value="ia">IA</option>
+			<option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option>
+			<option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option>
+			<option value="ma">MA</option> <option value="md">MD</option> <option value="me">ME</option>
+			<option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option>
+			<option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option>
+			<option value="nv">NV</option> <option value="nh">NH</option> <option value="nm">NM</option>
+			<option value="nj">NJ</option> <option value="ny">NY</option> <option value="nc">NC</option>
+			<option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option>
+			<option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option>
+			<option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option>
+			<option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option>
+			<option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option>
+			<option value="wi">WI</option> <option value="wy">WY</option> <option value="nm">NM</option>
+			<option value="other">Other</option>
+		</select>
+		<br>
+		<label for="zip">Zip*:</label>
+		<input type="text" id="zip" name="Zip Code" minlength="5" maxlength="5" required/>
+		<br>
+		<label for="phone">Phone Number*(follow the "ex." format):</label>
+		<input type="tel" id="phone" name="Phone Number" placeholder="ex. 123-456-7890"
+			   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" required/>
+		<br>
+		<div>
+			<label for="email">Email Address*:</label>
+			<input type="email" id="email" name="Email Address"
+				   onkeyup="checkForMatch('email', 'cemail', 'str')" required/>
+			<br>
+			<label for="cemail">Confirm Email*:</label>
+			<input type="email" id="cemail" class=""
+				   onkeyup="checkForMatch('email', 'cemail', 'str')" required>
+			<span id="str"></span>
+		</div>
+		<br>
+		<label for="job">Job Title*(can choose more than 1):</label>
+		<select id="job" name="Job Title" multiple required>
+			<option value="translator">Translator</option>
+			<option value="ps">Photo Shop</option>
+			<option value="validate">Validate</option>
+			<option value="time">Time Manager</option>
+			<option value="web">Web Developer</option>
+		</select>
+		<br>
+		<label for="start_date">Date you can start*:</label>
+		<input type="date" id="start_date" name="Start Date" required/>
+		<br>
+		<label for="work_hr">Number of Hours you can work per week:</label>
+		<input type="number" id="work_hr" min="1" max="25" placeholder="1-25"/>
+		<br>
+		<label>Upload your Resume(it's ok if you don't have any):</label>
+		<br>
+		<div id="drag_in_zone" ondragover="hoverFile(event)"
+			 ondrop="uploadFile(event)">
+			<div id="drag_upload">
+				<p>Drop Here</p>
+				<input type="file" id="select_file">
+			</div>
+		</div>
+		<p id="file_name" style="margin-left:15%"></p>
+		<br>
+        <label for="add_info">Additional information:</label>
+		<textarea id="add_info" rows="4" cols="40" maxlength="100" placeholder="max 100 characters"></textarea>
+        <br>
+		<input type="submit" style="float:right;" onclick = "checkForm();">
+	</form>
+	</body>
+</html>
